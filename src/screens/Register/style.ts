@@ -23,6 +23,7 @@ export const Title = styled.Text`
 `
 
 export const Form = styled.View`
+    flex: 1;
     margin-top: ${RFValue(24)}px;
     margin-left: ${RFValue(24)}px;
     margin-right: ${RFValue(24)}px;

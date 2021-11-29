@@ -9,4 +9,5 @@ export const Container = styled(TextInput)`
     width: 100%;
     padding: ${RFValue(18)}px;
     border-radius: ${RFValue(5)}px;
+    font-family: ${({theme}) => theme.fonts.regular};
 `
