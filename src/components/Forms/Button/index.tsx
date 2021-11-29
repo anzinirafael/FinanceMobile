@@ -2,12 +2,14 @@ import React from 'react';
 import {Container, Title} from './style';
 import { TouchableOpacityProps } from 'react-native';
 
-type Props = TouchableOpacityProps;
+interface Props extends TouchableOpacityProps{
+    title: string
+}
 
-export function Button({} : Props){
+export function Button({title, ...rest} : Props){
     return(
-       <Container>
-           <Title>Enviar</Title>
+       <Container {...rest}>
+           <Title>{title}</Title>
        </Container> 
     )
 }

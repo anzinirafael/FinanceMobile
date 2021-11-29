@@ -1,12 +1,14 @@
 import React from 'react';
 import { Button } from '../../components/Forms/Button';
 import { Input } from '../../components/Forms/Input';
+import { Transactions } from '../../components/Forms/Trasanctions';
 import {
     Container,
     Header,
     Title,
-    Form
-} from './style';
+    Form,
+    Fields,
+    TransactionsButtons} from './style';
 
 export function Register(){
     return(
@@ -17,9 +19,15 @@ export function Register(){
                 </Title>
             </Header>
             <Form>
-                <Input placeholder="Nome" style={{marginBottom: 8}}/>
-                <Input placeholder="Preço"/>  
-                <Button />
+                <Fields>
+                    <Input placeholder="Nome" style={{marginBottom: 8}}/>
+                    <Input placeholder="Preço"/>  
+                    <TransactionsButtons>
+                        <Transactions title="Income" icon="up"/>
+                        <Transactions title="Outcome" icon="down"/>
+                    </TransactionsButtons>
+                </Fields>
+                <Button title="Enviar"/>
             </Form>                    
         </Container>
     )
