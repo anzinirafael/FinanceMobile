@@ -33,7 +33,7 @@ export const Fields = styled.View`
 `
 
 export const TransactionsButtons = styled.View`
-    width: 100%;
     flex-direction: row;
     justify-content: space-between;
+    margin-top: ${RFValue(16)}px;
 `

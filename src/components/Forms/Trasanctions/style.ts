@@ -4,20 +4,23 @@ import { TouchableOpacity } from 'react-native';
 import { RFValue } from 'react-native-responsive-fontsize';
 
 interface TypeProps{
-    type: 'up' | 'down'
+    icon: 'up' | 'down'
 }
 
 export const Container = styled(TouchableOpacity)`
-    width: 100%;
     padding: ${RFValue(18)}px ${RFValue(36)}px;
     border-radius: ${RFValue(5)}px;
+    background-color: ${({theme}) => theme.colors.shape};
+    flex-direction: row;
+    align-items: center;
 `
 
-export const Icon = styled(Feather)`
+export const Icon = styled(Feather)<TypeProps>`
     font-size: ${RFValue(24)}px;
-    color: ${({theme, type}) =>
-    type === 'up' ?  theme.colors.success :
+    color: ${({theme, icon}) =>
+    icon === 'up' ?  theme.colors.success :
     theme.colors.attention};
+    margin-right: ${RFValue(8)}px;
 `
 
 export const Title = styled.Text`
