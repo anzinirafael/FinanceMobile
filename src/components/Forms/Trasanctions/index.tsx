@@ -3,15 +3,21 @@ import React from 'react';
 import { TouchableOpacityProps } from 'react-native';
 import {Container, Icon, Title} from './style';
 
-interface TransactionsProps extends TouchableOpacityProps{
-    icon: 'up' | 'down',
-    title: string
+const icons = {
+    up: 'arrow-up-circle',
+    down: 'arrow-down-circle'
 }
 
-export function Transactions({icon, title} : TransactionsProps){
+interface TransactionsProps extends TouchableOpacityProps{
+    type: 'up' | 'down',
+    title: string,
+    isActive: boolean
+}
+
+export function Transactions({type, title, isActive, ...rest} : TransactionsProps){
     return(
-        <Container>
-            <Icon type={icon}/>
+        <Container {...rest} isActive={isActive} type={type}>
+            <Icon name={icons[type]} type={type}/>
             <Title>{title}</Title>
         </Container>
     )
