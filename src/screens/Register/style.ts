@@ -17,7 +17,7 @@ export const Header = styled.View`
 
 export const Title = styled.Text`
     margin-top: ${getStatusBarHeight() + RFValue(32)}px;
-    font-family: ${({theme}) => theme.fonts.regular};
+    font-family: ${({theme}) => theme.fonts.medium};
     font-size: ${RFValue(18)}px;
     color: ${({theme}) => theme.colors.shape};
 `

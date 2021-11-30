@@ -1,6 +1,7 @@
 import React, {useState} from 'react';
 import { Button } from '../../components/Forms/Button';
 import { Input } from '../../components/Forms/Input';
+import { SelectCategory } from '../../components/Forms/SelectCategory';
 import { Transactions } from '../../components/Forms/Trasanctions';
 import {
     Container,
@@ -30,8 +31,8 @@ export function Register(){
                     <TransactionsButtons>
                         <Transactions title="Income" type="up" isActive={selectionButton  === 'up'} onPress={() => handleSelectionButton('up')}/>
                         <Transactions title="Income" type="down" isActive={selectionButton  === 'down'} onPress={() => handleSelectionButton('down')}/>
-                        
                     </TransactionsButtons>
+                    <SelectCategory title="Categorias"/>
                 </Fields>
                 <Button title="Enviar"/>
             </Form>                    
