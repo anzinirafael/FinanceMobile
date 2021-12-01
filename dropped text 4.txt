@@ -1,0 +1,1 @@
+/home/developer/Documentos/Projetos/financeAppTransferDesktop/ProjectReactNativeFinanceApp-main/src/components/Forms/SelectCategory
