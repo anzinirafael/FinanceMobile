@@ -1,5 +1,5 @@
 import React from 'react';
-import { FlatList } from 'react-native';
+import { FlatList, TouchableOpacityProps } from 'react-native';
 import { categories } from '../../Utils/categories';
 import {
     Container,
@@ -18,17 +18,23 @@ interface Category{
     name: string
 }
 
-interface CategorySelectProps{
+interface CategorySelectProps extends TouchableOpacityProps{
     category: Category,
     setCategory: (category: Category) => void,
     closeSelectCategory: () => void,
+
 }
 
 export function CategorySelect({
     category, 
     setCategory, 
-    closeSelectCategory}
+    closeSelectCategory,}
     : CategorySelectProps){
+
+    function handleSelectCategoryName(item: Category){
+        setCategory(item)
+    }    
+
     return(
         <Container> 
             <Header>
@@ -41,7 +47,8 @@ export function CategorySelect({
                 style={{flex: 1, width: '100%'}}
                 keyExtractor={(item) => item.key}
                 renderItem={({item }) => (
-                    <Category>
+                    <Category onPress={() => handleSelectCategoryName(item)} 
+                    isActive={category}>
                         <Icon name={item.icon} />
                         <Name>{item.name}</Name>
                     </Category>
@@ -52,7 +59,7 @@ export function CategorySelect({
                 }
             />
             <Footer>
-                <Button title="Selecionar"/>
+                <Button title="Selecionar" onPress={closeSelectCategory}/>
             </Footer>
         </Container>
     )
