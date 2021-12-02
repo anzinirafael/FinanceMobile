@@ -19,7 +19,7 @@ interface Category{
 }
 
 interface CategorySelectProps{
-    category: string,
+    category: Category,
     setCategory: (category: Category) => void,
     closeSelectCategory: () => void,
 }
