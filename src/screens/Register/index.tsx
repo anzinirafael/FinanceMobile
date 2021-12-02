@@ -49,7 +49,7 @@ export function Register(){
                         <Transactions title="Income" type="up" isActive={selectionButton  === 'up'} onPress={() => handleSelectionButton('up')}/>
                         <Transactions title="Income" type="down" isActive={selectionButton  === 'down'} onPress={() => handleSelectionButton('down')}/>
                     </TransactionsButtons>
-                    <SelectCategory title="Categorias" onPress={handleCategoryOpenModal} />
+                    <SelectCategory title={category.name} onPress={handleCategoryOpenModal} />
                 </Fields>
                 <Button title="Enviar"/>
             </Form>
