@@ -40,7 +40,6 @@ export const Icon = styled(Feather)<TypeProps>`
 
 export const Footer = styled.View`
     margin-top: ${RFValue(38)}px;
-
 `
 
 export const Amount = styled.Text<TypeProps>`

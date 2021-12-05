@@ -1,5 +1,6 @@
 import React, {useState} from 'react';
 import {Modal} from 'react-native';
+import { useForm, Controller } from "react-hook-form";
 
 import { Button } from '../../components/Forms/Button';
 import { Input } from '../../components/Forms/Input';
@@ -17,7 +18,7 @@ import {
 export function Register(){
     const [category, setCategory] = useState({
         key: 'category',
-        name: 'Categria',
+        name: 'Categoria',
     });
     const [selectionButton, setSelectionButton] = useState('');
     const [openModal, setOpenModal] = useState(false);

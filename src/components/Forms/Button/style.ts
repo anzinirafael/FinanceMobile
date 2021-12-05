@@ -9,7 +9,7 @@ export const Container = styled(TouchableOpacity)`
     border-radius: ${RFValue(5)}px;
     justify-content: center;
     align-items: center;
-    margin-bottom: ${RFValue(10)}px;
+    margin-bottom: ${RFValue(2)}px;
 `
 
 export const Title = styled.Text`
