@@ -30,7 +30,6 @@ export function CategorySelect({
     setCategory, 
     closeSelectCategory,}
     : CategorySelectProps){
-    //Função para selecionar de dentro da tela do modal o item da categoria
     function handleSelectCategoryName(item: Category){
         setCategory(item)
     }    
@@ -46,11 +45,8 @@ export function CategorySelect({
                 data={categories}
                 style={{flex: 1, width: '100%'}}
                 keyExtractor={(item) => item.key}
-                //Para cada item dentro de categories renderize de acordo com a função
                 renderItem={({item }) => (
-                    //Componente category, a cada vez que pressionado seleciona o item da categoria
                     <Category onPress={() => handleSelectCategoryName(item)} 
-                    //Realiza a comparação da chave de categoria com a chave do item se for a mesma prossegue
                     isActive={category.key === item.key}>
                         <Icon name={item.icon} />
                         <Name>{item.name}</Name>

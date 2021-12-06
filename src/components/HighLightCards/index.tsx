@@ -10,14 +10,12 @@ import {
 } from './style';
 
 interface PropsCard {
-    //Tipo dos icones presentes nas HighlightCards
     type: 'up' | 'down' | 'total',
     title: string,
     amount: string,
     lastTransaction: string,
 }
 
-//Nome dos icones  de acordo com o tipo
 const icon = {
     up: "arrow-up-circle",
     down: "arrow-down-circle",

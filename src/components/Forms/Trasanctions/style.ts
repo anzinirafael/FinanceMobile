@@ -15,7 +15,6 @@ export const Container = styled(TouchableOpacity)<TypeProps>`
     flex-direction: row;
     align-items: center;
     justify-content: center;
-    //Se o botão de transação for pressionado é retirada a borda
     border-width: ${({isActive}) => isActive ? 0 : 1.5}px;
     border-style: solid;
     border-color: ${({theme}) => theme.colors.text};
@@ -30,7 +29,6 @@ export const Container = styled(TouchableOpacity)<TypeProps>`
 
 export const Icon = styled(Feather)<TypeProps>`
     font-size: ${RFValue(24)}px;
-    //Se o tipo do botão for UP então a cor do icone será da cor de SUCESS senão será a con de ATTENTION
     color: ${({theme, type}) => type === 'up' ? theme.colors.success : theme.colors.attention};
     margin-right: ${RFValue(8)}px;
 `
