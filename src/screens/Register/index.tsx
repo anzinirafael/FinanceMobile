@@ -85,9 +85,9 @@ export function Register({name, amount} : FormData){
                 </Header>
                 <Form>
                     <Fields>
-                        <InputForm name="name" control={control} placeholder="Nome" style={{marginBottom: 8}}
+                        <InputForm error={errors.name && errors.name.message} name="name" control={control} placeholder="Nome" style={{marginBottom: 8}}
                         autoCapitalize="sentences" autoCorrect={false} />
-                        <InputForm name="amount" control={control} placeholder="Preço" keyboardType="numeric" 
+                        <InputForm error={errors.amount && errors.amount.message} name="amount" control={control} placeholder="Preço" keyboardType="numeric" 
                        />
                         <TransactionsButtons>
                             <Transactions title="Income" type="up" isActive={selectionButton  === 'up'} onPress={() => handleSelectionButton('up')}/>
