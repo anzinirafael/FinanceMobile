@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 import {Alert, Keyboard, Modal, TouchableWithoutFeedback} from 'react-native';
-import { useForm} from "react-hook-form";
+import { Control, useForm} from "react-hook-form";
 import { Button } from '../../components/Forms/Button';
 import { Input } from '../../components/Forms/Input';
 import { SelectCategory } from '../../components/Forms/SelectCategory';
@@ -18,17 +18,18 @@ import {
     TransactionsButtons} from './style';
 
 interface FormData{
-    name: string,
-    amount: string
+    name: string;
+    amount: string;
 }
 
 const schema = yup.object().shape({
     name: 
     yup.string()
-    .required('O nome é obrigatório'),
+    .required('O nome é obrigatório').min(2, 'O nome deve conter no mínimo duas letras'),
     amount: 
     yup.number()
     .positive('O valor não pode ser negativo')
+    .typeError('O valor deve ser do tipo numérico')
     .required('O valor é obrigatório')
   }).required();
 
@@ -87,8 +88,7 @@ export function Register({name, amount} : FormData){
                     <Fields>
                         <InputForm error={errors.name && errors.name.message} name="name" control={control} placeholder="Nome" style={{marginBottom: 8}}
                         autoCapitalize="sentences" autoCorrect={false} />
-                        <InputForm error={errors.amount && errors.amount.message} name="amount" control={control} placeholder="Preço" keyboardType="numeric" 
-                       />
+                        <InputForm error={errors.amount && errors.amount.message} name="amount" control={control} placeholder="Preço" keyboardType="numeric" />
                         <TransactionsButtons>
                             <Transactions title="Income" type="up" isActive={selectionButton  === 'up'} onPress={() => handleSelectionButton('up')}/>
                             <Transactions title="Income" type="down" isActive={selectionButton  === 'down'} onPress={() => handleSelectionButton('down')}/>

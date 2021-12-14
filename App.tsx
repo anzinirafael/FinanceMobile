@@ -27,8 +27,7 @@ export default function App() {
   }
   return (
     <ThemeProvider theme={theme}>
-      <Register 
-      />
+      <Register/>
     </ThemeProvider>
   );
 }

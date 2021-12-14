@@ -1,7 +1,6 @@
 import { RFValue } from 'react-native-responsive-fontsize';
 import styled, {css} from 'styled-components/native';
 import {Feather} from '@expo/vector-icons';
-import theme from '../../global/styles/theme';
 import { TouchableOpacity } from 'react-native';
 interface Props{
     isActive: boolean
@@ -44,8 +43,7 @@ export const Name = styled.Text`
 export const DivisorListItens = styled.View`
     height: ${RFValue(1)}px;
     width: 100%;
-    background-color: ${({theme}) => theme.colors.title};
-
+    background: ${({theme}) => theme.colors.background};
 `
 export const Footer = styled.View`
     width: 100%;
