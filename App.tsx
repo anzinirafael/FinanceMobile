@@ -22,6 +22,7 @@ export default function App() {
   if(!fontsLoaded){
     return <AppLoading />
   }
+  
   return (
     <ThemeProvider theme={theme}>
       <NavigationContainer> 
