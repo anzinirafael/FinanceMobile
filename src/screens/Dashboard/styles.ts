@@ -3,6 +3,7 @@ import { RFPercentage, RFValue } from 'react-native-responsive-fontsize';
 import {Feather} from '@expo/vector-icons';
 import theme from '../../global/styles/theme';
 import { getStatusBarHeight } from 'react-native-iphone-x-helper';
+import { BorderlessButton } from 'react-native-gesture-handler';
 
 export const Container = styled.SafeAreaView` 
     flex: 1;
@@ -54,6 +55,10 @@ export const UserName = styled.Text`
     margin-top: ${RFValue(-5)}px;;
 `
 
+export const LogoutButton = styled(BorderlessButton)`
+    
+`
+
 export const IconPower = styled(Feather)`
     font-size: ${RFValue(24)}px;
     color: ${({ theme }) => theme.colors.secondary};
@@ -82,3 +87,4 @@ export const Title = styled.Text`
 export const ListTransactions = styled.FlatList`
     
 `
+
