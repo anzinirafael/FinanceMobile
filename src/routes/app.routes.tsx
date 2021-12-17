@@ -18,11 +18,12 @@ export function AppRoutes(){
                 headerShown: false,
                 tabBarActiveTintColor: theme.colors.secondary,
                 tabBarInactiveTintColor: theme.colors.text,
+                tabBarActiveBackgroundColor: '#d9d9d9d9',
                 tabBarLabelPosition: 'beside-icon',
                 tabBarStyle: {
-                    height: 70,
+                    height: 80,
                     paddingVertical: Platform.OS === 'ios' ?  20 : 0,
-                    backgroundColor: theme.colors.shape,
+                    backgroundColor: theme.colors.shape
                 }
 
             }}
@@ -32,7 +33,7 @@ export function AppRoutes(){
                 component={Dashboard}
                 options={{
                     tabBarIcon: (({size, color}) => 
-                        <MaterialIcons name='format-list-bulleted' size={24} color={color}/>
+                        <MaterialIcons name='format-list-bulleted' size={24} color={color} />
                     )
                 }}
             />

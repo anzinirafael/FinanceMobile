@@ -95,7 +95,7 @@ export function Register({name, amount} : FormData){
                         </TransactionsButtons>
                         <SelectCategory title={category.name} onPress={handleCategoryOpenModal} />
                     </Fields>
-                    <Button title="Enviar" onPress={handleSubmit(handleRegister)}/>
+                    <Button type="submit" title="Enviar" onPress={handleSubmit(handleRegister)}/>
                 </Form>
                 <Modal visible={openModal}>
                     <CategorySelect         

@@ -56,12 +56,13 @@ export const UserName = styled.Text`
 `
 
 export const LogoutButton = styled(BorderlessButton)`
-    
+
 `
 
 export const IconPower = styled(Feather)`
     font-size: ${RFValue(24)}px;
     color: ${({ theme }) => theme.colors.secondary};
+    
 ` 
 
 export const HighLightCards = styled.ScrollView`    

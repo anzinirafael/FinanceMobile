@@ -12,13 +12,14 @@ import {
     Footer,
 } from './style';
 import {Button} from './../../components/Forms/Button';
+import { RectButtonProps } from 'react-native-gesture-handler';
 
 interface Category{
     key: string,
     name: string
 }
 
-interface CategorySelectProps extends TouchableOpacityProps{
+interface CategorySelectProps extends RectButtonProps{
     category: Category,
     setCategory: (category: Category) => void,
     closeSelectCategory: () => void,
@@ -47,7 +48,7 @@ export function CategorySelect({
                 keyExtractor={(item) => item.key}
                 renderItem={({item }) => (
                     <Category onPress={() => handleSelectCategoryName(item)} 
-                    isActive={category.key === item.key}>
+                        isActive={category.key === item.key}>
                         <Icon name={item.icon} />
                         <Name>{item.name}</Name>
                     </Category>
@@ -58,7 +59,7 @@ export function CategorySelect({
                 }
             />
             <Footer>
-                <Button title="Selecionar" onPress={closeSelectCategory}/>
+                <Button type="select" title="Selecionar" onPress={closeSelectCategory}/>
             </Footer>
         </Container>
     )
