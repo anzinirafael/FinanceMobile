@@ -1,5 +1,5 @@
 import React from 'react';
-import { FlatList, TouchableOpacityProps } from 'react-native';
+import { FlatList } from 'react-native';
 import { categories } from '../../Utils/categories';
 import {
     Container,

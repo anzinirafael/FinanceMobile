@@ -1,5 +1,3 @@
-import RNGestureHandlerButton from "react-native-gesture-handler/lib/typescript/components/GestureHandlerButton";
-
 export default{
     colors: {
         primary: '#5636D3',

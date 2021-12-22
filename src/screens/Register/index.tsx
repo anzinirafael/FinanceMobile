@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 import {Alert, Keyboard, Modal, TouchableWithoutFeedback} from 'react-native';
-import { Control, useForm} from "react-hook-form";
+import { useForm} from "react-hook-form";
 import { Button } from '../../components/Forms/Button';
 import { SelectCategory } from '../../components/Forms/SelectCategory';
 import { Transactions } from '../../components/Forms/Trasanctions';
