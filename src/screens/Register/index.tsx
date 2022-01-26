@@ -16,9 +16,11 @@ import {
     Fields,
     TransactionsButtons} from './style';
 
+
 interface FormData{
     name: string;
     amount: string;
+    handleRegister: () => void;
 }
 
 const schema = yup.object().shape({
@@ -72,6 +74,8 @@ export function Register({name, amount} : FormData){
             category: category.key
         }
         console.log(data);
+        setSelectionButton('');
+        setCategory({key: 'category', name: 'Categoria'});
     }
 
 
@@ -94,7 +98,7 @@ export function Register({name, amount} : FormData){
                         </TransactionsButtons>
                         <SelectCategory title={category.name} onPress={handleCategoryOpenModal} />
                     </Fields>
-                    <Button type="submit" title="Enviar" onPress={handleSubmit(handleRegister)}/>
+                    <Button type="submit" title="Enviar" onPress={handleSubmit(() => handleRegister)}/>
                 </Form>
                 <Modal visible={openModal}>
                     <CategorySelect         
@@ -102,8 +106,8 @@ export function Register({name, amount} : FormData){
                     setCategory={setCategory}
                     closeSelectCategory={handleCategoryCloseModal}
                     />
-                </Modal>
-            </Container>
-        </TouchableWithoutFeedback>
+                    </Modal>
+                </Container>
+            </TouchableWithoutFeedback>
     )
 }
